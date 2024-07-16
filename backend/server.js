@@ -27,7 +27,7 @@ app.use(cors({
 //middleware methods
 app.use(express.json()); //my backend will understand whatever the frontend sends
 app.use(morgan('tiny'));
-app.use(authJwt());
+//app.use(authJwt());
 app.use('/public/uploads/', express.static(__dirname + '/public/uploads'));
 app.use(errorHandler);
 
