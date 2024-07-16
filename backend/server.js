@@ -11,7 +11,9 @@ const cookieParser = require('cookie-parser')
 require('dotenv').config(); // Load environment variables from .env file
 const api = process.env.API_URL || 'http://localhost:3000'; // Set a default value if API_URL is undefined
 
-
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 
 if (process.env.NODE_ENV === 'development') {
     console.log('API URL:', api); // Print the API URL in debug mode
