@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     }else if(!this.validEmail(user.email)){
       Swal.fire('Error', 'Please enter a valid Email', 'error')
     } else {
-      this.http.post('http://localhost:3000/api/v1/users/login', { email: user.email, password: user.password })
+      this.http.post('https://medicare-backend-ten.vercel.app/api/v1/users/login', { email: user.email, password: user.password })
         .subscribe((response: any) => {
           // Save token in local storage
           localStorage.setItem('token', response.token);
