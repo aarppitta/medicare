@@ -1,0 +1,173 @@
+<app-header></app-header>
+
+<!-- Start Hero Section -->
+<div class="hero">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>Checkout</h1>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Hero Section -->
+
+
+<div class="untree_co-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-12">
+          <!-- <div class="border p-4 rounded" role="alert">
+            Returning customer? <a href="#">Click here</a> to login
+          </div> -->
+        </div>
+      </div>
+      
+      <form [formGroup]="checkoutForm" (ngSubmit)="placeOrder()"> 
+      <div class="row">
+
+        <div class="col-md-6 mb-5 mb-md-0">
+          <h2 class="h3 mb-3 text-black">Billing Details</h2>
+          <div class="p-3 p-lg-5 border bg-white">
+            <div class="form-group">
+              <label for="country" class="text-black">Country <span class="text-danger">*</span></label>
+              <select id="country" class="form-control" name="country" formControlName="country">
+                <option value="0">Select a country</option>    
+                <option value="1">United Kingdom</option>    
+                   
+              </select>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="name" class="text-black">First Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="First Name" formControlName="name">
+              </div>
+              <!-- <div class="col-md-6">
+                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="c_lname" name="c_lname" placeholder="Last Name">
+              </div> -->
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="address" class="text-black">Address <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address" formControlName="address">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="city" class="text-black">City <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="city" name="city" placeholder="City" formControlName="city">
+              </div>
+            </div>
+            <!-- <div class="form-group mt-3">
+              <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
+            </div> -->
+
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="street" class="text-black">Street <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="street" name="street" placeholder="Street" formControlName="street">
+              </div>
+              <div class="col-md-6">
+                <label for="postcode" class="text-black">Postcode <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="postcode" name="postcode" placeholder="Postcode" formControlName="postcode">
+              </div>
+            </div>
+
+            <div class="form-group row mb-5">
+              <div class="col-md-6">
+                <label for="email" class="text-black">Email Address <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email Address" formControlName="email">
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="text-black">Phone<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" formControlName="phone">
+              </div>
+            </div>
+
+            
+  
+
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row mb-5">
+            <div class="col-md-12">
+              <h2 class="h3 mb-3 text-black">Your Order</h2>
+              <div class="p-3 p-lg-5 border bg-white">
+                <table class="table site-block-order-table mb-5">
+                  <thead>
+                    <th>Product</th>
+                    <th>Total</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of cartItems">
+                      <td>{{item.product.pname}} <strong class="mx-2">x</strong>{{item.quantity}}</td>
+                      <td>${{item.product.price}}</td>
+                    </tr>
+                    
+                    <tr>
+                      <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
+                      <td class="text-black">${{subTotal()}}</td>
+                    </tr>
+                    <tr>
+                      <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+                      <td class="text-black font-weight-bold"><strong>${{subTotal()}}</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- <div class="border p-3 mb-3">
+                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
+
+                  <div class="collapse" id="collapsebank">
+                    <div class="py-2">
+                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border p-3 mb-3">
+                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsecheque" role="button" aria-expanded="false" aria-controls="collapsecheque">Cheque Payment</a></h3>
+
+                  <div class="collapse" id="collapsecheque">
+                    <div class="py-2">
+                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border p-3 mb-5">
+                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsepaypal" role="button" aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
+
+                  <div class="collapse" id="collapsepaypal">
+                    <div class="py-2">
+                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="form-group">
+                  <p>cash payment only</p>
+                  <button class="btn btn-black btn-lg py-3 btn-block">Place Order</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      </form> 
+    </div>
+  </div>

@@ -1,0 +1,71 @@
+
+<app-header></app-header>
+
+<!-- Start Contact Form -->
+<div class="untree_co-section">
+  <div class="container">
+
+    <div class="block">
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-lg-4 pb-4">
+          <form [formGroup]="form" (submit)="register()">
+            <h1>Register Page</h1>
+            <br>
+            <div class="form-group">
+              <input type="name" class="form-control" name="name" placeholder="Name" formControlName="name" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Email address" formControlName="email" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="Password" formControlName="password" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <input type="number" class="form-control" name="phone" placeholder="Contact Number" formControlName="phone" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="text" class="form-control" name="postcode" placeholder="Postcode" formControlName="postcode" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <input type="number" class="form-control" name="street" placeholder="Street" formControlName="street" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="apartment" placeholder="Apartment" formControlName="apartment" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="city" placeholder="City" formControlName="city" required>
+            </div>
+            <br>
+            
+            <div class="form-group">
+            <button type="submit" class="btn btn-primary-hover-outline">Register</button> 
+            <a routerLink="/register" style="margin-left:15px ;">Creat an account?</a>
+            </div>
+            <br>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+<!-- End Contact Form -->

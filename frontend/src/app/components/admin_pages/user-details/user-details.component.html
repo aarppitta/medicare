@@ -1,0 +1,47 @@
+<app-admin-header></app-admin-header>
+
+<div class="container">
+    
+    <div class="col-10" >
+        <div class="bg-light rounded h-100 p-4">
+            <h2 class="mb-4">User Details</h2>
+            <button class="addbtn" routerLink="/user-add"> + Add User</button>
+            <div class="table-responsive" >
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <!-- <th scope="col">Password</th> -->
+                            <th scope="col">Contact</th>
+                            <th scope="col">Postcode</th>
+                            <th scope="col">Street</th>
+                            <th scope="col">Apartment</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users; let i = index">
+                            <th scope="row">{{ i + 1}}</th>
+                            <td>{{user.name}}</td>
+                            <td>{{user.email}}</td>
+                            <!-- <td>{{user.password}}</td> -->
+                            <td>{{user.phone}}</td>
+                            <td>{{user.postcode}}</td>
+                            <td>{{user.street}}</td>
+                            <td>{{user.apartment}}</td>
+                            <td>{{user.city}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success" (click)="editUser(user)"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger" (click)="deleteUser(user._id)" routerLink="/user-details"><i class="far fa-trash-alt"></i></button></td>
+
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

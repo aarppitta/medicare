@@ -1,0 +1,159 @@
+
+<app-header></app-header>
+<!-- Start Hero Section -->
+<div class="hero">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-lg-5">
+				<p></p>
+				<div class="intro-excerpt">
+					<h1>Take Medicine <span clsas="d-block">Live Better Life</span></h1>
+					<p class="mb-4">Time and health are two precious assets that we don’t recognize and appreciate until they have been depleted.</p>
+					<p><a routerLink="/shop" class="btn btn-secondary me-2">Shop Now</a><a routerLink="/shop" class="btn btn-white-outline">Explore</a></p>
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="hero-img-wrap">
+					<img src="assets/images/tabs.jpeg" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Hero Section -->
+
+        <!-- Start Product Section -->
+		<div class="product-section">
+			<div class="container">
+				<div class="row">
+
+					<!-- Start Column 1 -->
+					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+						<h2 class="mb-4 section-title">Medicines can heal You. And your inner voice.</h2>
+						<p class="mb-4">Buy medicines with cheper prices.</p>
+						<p><a routerLink="/shop" class="btn">Explore</a></p>
+					</div> 
+					<!-- End Column 1 -->
+
+					<!-- Start Column 2 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" *ngFor="let product of products">
+						<a class="product-item" (click)="addToCart(product, 1)">
+							<img [src]="product.image" class="img-fluid product-thumbnail">
+							<h3 class="product-title">{{product.pname}}</h3>
+							<strong class="product-price">${{product.price}}</strong>
+
+							<span class="icon-cross">
+								<a (click)="addToCart(product, 1)"><i class="fa-solid fa-plus" style="color: #ffff;"></i></a>
+							</span>
+						</a>
+					</div> 
+					<!-- End Column 2 -->
+
+				
+
+				</div>
+			</div>
+		</div>
+		<!-- End Product Section -->
+
+<!-- Start Why Choose Us Section -->
+<div class="why-choose-section">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p>We provide cheaper medicines online sell. Because of COVID-19, Everyone has right to get medicines in cheper price and faster.</p>
+
+                <div class="row my-5">
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <i class="fa-solid fa-truck" style="color: black;font-size: 30px;"></i>
+                            </div>
+                            <h3>Fast &amp; Free Shipping</h3>
+                            <p>We are the best sellers of medicines. Also no delivery charges if you buy more than just 10 pounds.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <i class="fa-solid fa-bag-shopping" style="color: black;font-size: 30px;"></i>
+                            </div>
+                            <h3>Easy to Shop</h3>
+                            <p>From this website, It is very easy to shop as this is the same as e-commerce website.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <i class="fa-solid fa-handshake" style="color: #111212;font-size: 30px;"></i>
+                            </div>
+                            <h3>24/7 Support</h3>
+                            <p>Also we provide 24/7 support to any customers. We will help regarding medicine purchase.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <i class="fa-solid fa-rotate-right" style="color: #070808; font-size: 30px;"></i>
+                            </div>
+                            <h3>Hassle Free Returns</h3>
+                            <p>It is easy to return as well.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="img-wrap">
+                    <img src="assets/images/tabs.jpeg" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Why Choose Us Section -->
+
+<!-- Start Product Section -->
+<!-- <div class="product-section">
+	<div class="container">
+		<div class="row"> -->
+
+			<!-- Start Column 1 -->
+			<!-- <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+				<h2 class="mb-4 section-title">Featured Items.</h2>
+				<p class="mb-4">Buy medicines with cheper prices.</p>
+				<p><a routerLink="/shop" class="btn">Explore</a></p>
+			</div>  -->
+			<!-- End Column 1 -->
+
+			<!-- Start Column 2 -->
+			<!-- <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" *ngFor="let product of products">
+				<a class="product-item" (click)="addToCart(product, 1)">
+					<img [src]="product.image" class="img-fluid product-thumbnail">
+					<h3 class="product-title">{{product.pname}}</h3>
+					<strong class="product-price">${{product.price}}</strong>
+
+					<span class="icon-cross">
+						<a (click)="addToCart(product, 1)"><i class="fa-solid fa-plus" style="color: #ffff;"></i></a>
+					</span>
+				</a>
+			</div>  -->
+			<!-- End Column 2 -->
+
+		<!-- </div>
+	</div>
+</div> -->
+<!-- End Product Section -->
+
+
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/tiny-slider.js"></script>
+		<script src="js/custom.js"></script>
+	
+		<app-footer></app-footer>

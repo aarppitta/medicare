@@ -1,0 +1,72 @@
+<app-admin-header></app-admin-header>
+
+<div class="container">
+    <div class="col-10">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light rounded h-100 p-4">
+                <h3 class="mb-4">Update Product Details</h3>
+                <div *ngIf="updateProductForm">
+                <form [formGroup]="updateProductForm" (submit)="updateProduct($event, product)">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput"
+                        placeholder="Product Name" formControlName="pname" name="pname" >
+                    <label for="floatingInput">Product Name</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput"
+                        placeholder="Description" formControlName="description" name="description">
+                    <label for="floatingInput">Description</label>
+                </div>
+
+                
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput"
+                        placeholder="Rich Description" formControlName="richDescription" name="richDescription">
+                    <label for="floatingInput">Rich Description</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="floatingInput"
+                        placeholder="Price" formControlName="price" name="price">
+                    <label for="floatingInput">Price</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number"  class="form-control" id="floatingInput"
+                        placeholder="countInStock" formControlName="countInStock" name="countInStock">
+                    <label for="floatingInput">countInStock</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text"  class="form-control" id="floatingInput"
+                        placeholder="isFeatured" formControlName="isFeatured" name="isFeatured">
+                    <label for="floatingInput">isFeatured</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="floatingInput"
+                        placeholder="Date" formControlName="dateCreated" name="dateCreated">
+                    <label for="floatingInput">Date</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="file" class="form-control" id="floatingInput"
+                        placeholder="Image" formControlName="image" name="image">
+                    
+                </div>
+
+                
+
+                <button type="submit" class="btn btn-primary">Update Details</button>
+            
+            </form>
+            
+        </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

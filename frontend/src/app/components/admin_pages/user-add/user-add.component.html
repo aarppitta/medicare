@@ -1,0 +1,65 @@
+<app-admin-header></app-admin-header>
+
+<div class="container">
+    <div class="col-10">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light rounded h-100 p-4">
+                <h3 class="mb-4">Add User Details</h3>
+                <div *ngIf="addUserForm">
+                <form [formGroup]="addUserForm" (submit)="addUser()">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput"
+                        placeholder="Name" formControlName="name" name="name" >
+                    <label for="floatingInput">Name</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput"
+                        placeholder="email" formControlName="email" name="email">
+                    <label for="floatingInput">Email Address</label>
+                </div>
+
+                
+
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="floatingInput"
+                        placeholder="phone" formControlName="phone" name="phone">
+                    <label for="floatingInput">Contact Number </label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput"
+                        placeholder="Postcode" formControlName="postcode" name="postcode">
+                    <label for="floatingInput">Postcode</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number"  class="form-control" id="floatingInput"
+                        placeholder="Street" formControlName="street" name="street">
+                    <label for="floatingInput">Street</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput"
+                        placeholder="Apartment" formControlName="apartment" name="apartment">
+                    <label for="floatingInput">Apartment</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput"
+                        placeholder="City" formControlName="city" name="city">
+                    <label for="floatingInput">City</label>
+                </div>
+
+                
+                <button type="submit" class="btn btn-primary">Add Details</button>
+            
+            </form>
+            
+        </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
