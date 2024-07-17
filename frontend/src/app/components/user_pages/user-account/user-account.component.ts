@@ -27,7 +27,7 @@ export class UserAccountComponent implements OnInit {
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.get(`http://localhost:3000/api/v1/users/account`, { headers })
+    this.http.get(`https://medicare-backend-ten.vercel.app/api/v1/users/account`, { headers })
     .subscribe((user: any) => {
       console.log('User:', user);
       this.user = user;
@@ -60,7 +60,7 @@ export class UserAccountComponent implements OnInit {
     }
 
     const headers = { Authorization: `Bearer ${token}` };
-      this.http.put(`http://localhost:3000/api/v1/users`, this.updateUserForm.value, { headers }).subscribe(
+      this.http.put(`https://medicare-backend-ten.vercel.app/api/v1/users`, this.updateUserForm.value, { headers }).subscribe(
         data => {
           console.log('User updated successfully!');
           this.user = data; // Update this.user with the updated user data

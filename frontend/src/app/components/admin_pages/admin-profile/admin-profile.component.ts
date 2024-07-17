@@ -43,7 +43,7 @@ export class AdminProfileComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.post('http://localhost:3000/api/v1/users', userData, {headers})
+    this.http.post('https://medicare-backend-ten.vercel.app/api/v1/users', userData, {headers})
     .subscribe((data) => {
       userData = data;
       console.log('user updated successfully', data);

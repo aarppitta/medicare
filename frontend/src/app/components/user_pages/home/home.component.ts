@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.http.get('http://localhost:3000/api/v1/products')
+    this.http.get('https://medicare-backend-ten.vercel.app/api/v1/products')
     .subscribe((product)=>{
       this.products = product;
     },(e)=>{
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       }
       const headers = { Authorization: `Bearer ${token}` };
       console.log(token);
-      this.http.post('http://localhost:3000/api/v1/cart', {product_id: product._id, quantity: quantity}, {headers})
+      this.http.post('https://medicare-backend-ten.vercel.app/api/v1/cart', {product_id: product._id, quantity: quantity}, {headers})
       .subscribe((cart)=>{
         console.log(cart);
         this.cartService.incrementNotificationCount();

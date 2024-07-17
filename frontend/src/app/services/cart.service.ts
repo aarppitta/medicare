@@ -32,7 +32,7 @@ export class CartService {
       return 0 ;
     }
     const headers = { Authorization: `Bearer ${token}` };
-    this.http.get('http://localhost:3000/api/v1/cart',{headers}).subscribe((cartItems:any)=>{ 
+    this.http.get('https://medicare-backend-ten.vercel.app/api/v1/cart',{headers}).subscribe((cartItems:any)=>{ 
       console.log(cartItems);
       this.showNotification.next(true);
       const totalQuantity = cartItems.reduce((sum : number, item : any) => sum + item.quantity, 0);

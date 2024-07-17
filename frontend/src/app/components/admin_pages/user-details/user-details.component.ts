@@ -22,7 +22,7 @@ export class UserDetailsComponent implements OnInit {
     }
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.get<any[]>('http://localhost:3000/api/v1/users', { headers })
+    this.http.get<any[]>('https://medicare-backend-ten.vercel.app/api/v1/users', { headers })
       .subscribe((data) => {
       this.users = data;
       console.log('Data fetched successfully', data);
@@ -46,7 +46,7 @@ editUser(user: any) {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.delete<any[]>(`http://localhost:3000/api/v1/users/${id}`, { headers })
+    this.http.delete<any[]>(`https://medicare-backend-ten.vercel.app/api/v1/users/${id}`, { headers })
       .subscribe((data) => {
       console.log('Data fetched successfully', data);
       }, (error) => {

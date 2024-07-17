@@ -20,7 +20,7 @@ export class UserUpdateComponent implements OnInit {
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.get(`http://localhost:3000/api/v1/users/${this.id}`, { headers }).subscribe((user: any) => {
+    this.http.get(`https://medicare-backend-ten.vercel.app/api/v1/users/${this.id}`, { headers }).subscribe((user: any) => {
       console.log('User:', user);
       this.user = user;
       this.updateForm = this.formBuilder.group({
@@ -47,7 +47,7 @@ export class UserUpdateComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-      this.http.put(`http://localhost:3000/api/v1/users/${this.id}` ,updatedUserData , { headers })
+      this.http.put(`https://medicare-backend-ten.vercel.app/api/v1/users/${this.id}` ,updatedUserData , { headers })
       .subscribe((result)=>{
         this.router.navigate(['/user-details']);
       },

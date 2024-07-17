@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.post('http://localhost:3000/api/v1/contacts', userContact, {headers})
+    this.http.post('https://medicare-backend-ten.vercel.app/api/v1/contacts', userContact, {headers})
     .subscribe((contact) => {
       userContact = contact;
       console.log('contact sent successfully', contact);

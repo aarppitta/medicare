@@ -22,7 +22,7 @@ export class ProductUpdateComponent implements OnInit {
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.get(`http://localhost:3000/api/v1/products/${this.id}`, { headers }).subscribe((product: any) => {
+    this.http.get(`https://medicare-backend-ten.vercel.app/api/v1/products/${this.id}`, { headers }).subscribe((product: any) => {
       console.log('User:', product);
       this.product = product;
       
@@ -53,7 +53,7 @@ export class ProductUpdateComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-      this.http.put(`http://localhost:3000/api/v1/products/${this.id}` ,updatedUserData , { headers })
+      this.http.put(`https://medicare-backend-ten.vercel.app/api/v1/products/${this.id}` ,updatedUserData , { headers })
       .subscribe((result) => {
         this.router.navigate(['/product-details']);
       },

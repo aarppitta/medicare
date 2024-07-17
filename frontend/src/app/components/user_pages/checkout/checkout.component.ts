@@ -23,7 +23,7 @@ export class CheckoutComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.get<any[]>('http://localhost:3000/api/v1/cart', { headers })
+    this.http.get<any[]>('https://medicare-backend-ten.vercel.app/api/v1/cart', { headers })
       .subscribe((data) => {
       this.cartItems = data;
       console.log('Data fetched successfully', data);
@@ -79,7 +79,7 @@ export class CheckoutComponent implements OnInit {
     .subscribe((order)=>{
       // remove cart items
       
-      this.http.delete('http://localhost:3000/api/v1/cart', { headers })
+      this.http.delete('https://medicare-backend-ten.vercel.app/api/v1/cart', { headers })
       .subscribe((data) => {
         console.log('Data fetched successfully', data);
         this.router.navigate(['/thanks']);

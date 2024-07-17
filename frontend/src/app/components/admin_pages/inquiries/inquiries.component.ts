@@ -21,7 +21,7 @@ export class InquiriesComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.get<any[]>('http://localhost:3000/api/v1/contacts', {headers})
+    this.http.get<any[]>('https://medicare-backend-ten.vercel.app/api/v1/contacts', {headers})
       .subscribe(contact => {
         this.contacts = contact;
       console.log('Contact fetched successfully', contact);

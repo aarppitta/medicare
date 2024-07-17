@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.get<any[]>('http://localhost:3000/api/v1/cart', { headers })
+    this.http.get<any[]>('https://medicare-backend-ten.vercel.app/api/v1/cart', { headers })
       .subscribe((data) => {
       this.cartItems = data;
       this.cartService.changeCartItems(data);
@@ -40,7 +40,7 @@ export class CartComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.delete<any[]>(`http://localhost:3000/api/v1/cart/${id}`, { headers })
+    this.http.delete<any[]>(`https://medicare-backend-ten.vercel.app/api/v1/cart/${id}`, { headers })
       .subscribe((data) => {
      this.cartItems = this.cartItems.filter((item: any) => item._id !== id);
       console.log('Data fetched successfully', data);

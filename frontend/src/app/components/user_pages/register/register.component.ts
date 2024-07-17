@@ -57,7 +57,7 @@ register(){
     Swal.fire('Error', 'Please Enter valid Email!', 'error')
   }
   else{
-    this.http.post("http://localhost:3000/api/v1/users/register", user,{
+    this.http.post("https://medicare-backend-ten.vercel.app/api/v1/users/register", user,{
       withCredentials:true
     }).subscribe(() => {
       this.router.navigate(['/home']), (e:any) => {

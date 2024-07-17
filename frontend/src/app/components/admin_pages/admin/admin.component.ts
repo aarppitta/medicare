@@ -21,7 +21,7 @@ export class AdminComponent implements OnInit {
     }
 
     const headers = { Authorization: `Bearer ${token}` };
-    this.http.get('http://localhost:3000/api/v1/orders/get/totalsales', {headers}).subscribe((data)=>{
+    this.http.get('https://medicare-backend-ten.vercel.app/api/v1/orders/get/totalsales', {headers}).subscribe((data)=>{
       this.sales = data
       console.log(data);
     },
@@ -41,7 +41,7 @@ getCount(){
     }
 
     const headers = { Authorization: `Bearer ${token}` };
-    this.http.get('http://localhost:3000/api/v1/orders/get/count', {headers}).subscribe((data)=>{
+    this.http.get('https://medicare-backend-ten.vercel.app/api/v1/orders/get/count', {headers}).subscribe((data)=>{
       this.count = data
       console.log(data);
     },
@@ -60,7 +60,7 @@ getRecentOrders(){
 
   const headers = { Authorization: `Bearer ${token}` };
 
-  this.http.get<any[]>('http://localhost:3000/api/v1/orders', { headers })
+  this.http.get<any[]>('https://medicare-backend-ten.vercel.app/api/v1/orders', { headers })
     .subscribe(order => {
       this.orders = order;
       console.log('Data fetched successfully', order);

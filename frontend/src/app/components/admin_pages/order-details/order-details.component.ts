@@ -21,7 +21,7 @@ export class OrderDetailsComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-    this.http.get<any[]>('http://localhost:3000/api/v1/orders', { headers })
+    this.http.get<any[]>('https://medicare-backend-ten.vercel.app/api/v1/orders', { headers })
       .subscribe(order => {
         this.orders = order;
         console.log('Data fetched successfully', order);

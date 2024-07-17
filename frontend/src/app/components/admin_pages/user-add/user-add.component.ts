@@ -52,7 +52,7 @@ export class UserAddComponent implements OnInit {
 
     const headers = { Authorization: `Bearer ${token}` };
 
-      this.http.post('http://localhost:3000/api/v1/users/register', userData, {headers})
+      this.http.post('https://medicare-backend-ten.vercel.app/api/v1/users/register', userData, {headers})
         .subscribe((result: any) => {
           console.log('User Added Successfully', result);
         this.router.navigate(['/user-details']);
