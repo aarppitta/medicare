@@ -21,7 +21,8 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(cors({
     credentials: true,
-    origin: 'https://medicare-frontend-inky.vercel.app',
+    origin: 'https://medicare-frontend-inky.vercel.app/',
+    methods: ['GET', 'POST'],
 }));
 
 //middleware methods
